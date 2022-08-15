@@ -1,3 +1,5 @@
+import displayCityWeatherData from './dom';
+
 const searchCityWeatherData = () => {
   async function requestWeatherData(cityName) {
     try {
@@ -13,7 +15,7 @@ const searchCityWeatherData = () => {
   }
 
   function processResponseWeatherData(getWeatherData) {
-    const weatherDetails = {
+    const weatherData = {
       cityName: getWeatherData.name,
       feelsLike: getWeatherData.main.feels_like,
       humidity: getWeatherData.main.humidity,
@@ -26,9 +28,10 @@ const searchCityWeatherData = () => {
       windSpeed: getWeatherData.wind.speed,
     };
 
-    console.log(weatherDetails);
+    // console.log(weatherDetails);
+    displayCityWeatherData().getWeatherDataAfterProcess(weatherData);
 
-    return { weatherDetails };
+    return { weatherData };
   }
 
   return { requestWeatherData, processResponseWeatherData };
