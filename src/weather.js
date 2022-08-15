@@ -1,3 +1,4 @@
+import getWeatherDataAfterProcess from './dom';
 import displayCityWeatherData from './dom';
 
 const searchCityWeatherData = () => {
@@ -28,8 +29,7 @@ const searchCityWeatherData = () => {
       windSpeed: getWeatherData.wind.speed,
     };
 
-    // console.log(weatherDetails);
-    displayCityWeatherData().getWeatherDataAfterProcess(weatherData);
+    getWeatherDataAfterProcess(weatherData);
 
     return { weatherData };
   }
