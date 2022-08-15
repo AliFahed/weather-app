@@ -14,15 +14,24 @@ const searchCityWeatherData = () => {
 
   function processResponseWeatherData(getWeatherData) {
     const weatherDetails = {
-      name: getWeatherData.name,
-      id: getWeatherData.id,
+      cityName: getWeatherData.name,
+      feelsLike: getWeatherData.main.feels_like,
+      humidity: getWeatherData.main.humidity,
+      temperature: getWeatherData.main.temp,
+      maximumTemperature: getWeatherData.main.temp_max,
+      minimumTemperature: getWeatherData.main.temp_min,
       currentWeather: getWeatherData.weather[0].main,
+      currentWeatherDescription: getWeatherData.weather[0].description,
+      cityTimezone: getWeatherData.timezone,
+      windSpeed: getWeatherData.wind.speed,
     };
 
     console.log(weatherDetails);
+
+    return { weatherDetails };
   }
 
-  return { requestWeatherData };
+  return { requestWeatherData, processResponseWeatherData };
 };
 
 export default searchCityWeatherData;
