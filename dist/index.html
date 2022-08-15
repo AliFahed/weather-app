@@ -10,30 +10,33 @@
   <body>
     <div class="weather-app">
       <header class="header">
-        <h1>What's the Weather Today!</h1>
+        <h1>Check Today's Weather!</h1>
       </header>
+      <div class="form-container">
+        <form action="#" method="get" class="form">
+          <input
+            type="text"
+            name="city"
+            class="input-city"
+            placeholder="Enter city name"
+            required
+          />
+          <button type="submit" class="search-btn">Search</button>
+        </form>
+      </div>
       <main class="main-container">
         <div class="search-weather-container">
           <div class="main-weather-data">
+            <p class="current-weather">Clear</p>
             <p class="current-weather-description">Clear Sky</p>
-            <p class="city-name">Cairo</p>
           </div>
-          <div class="city-timezone">
-            <p>7200 timezone</p>
+          <div class="city-details">
+            <p class="city-name">Cairo</p>
+            <p class="city-timezone">7200 timezone</p>
           </div>
           <div class="display-temperature">
             <p>26 temp</p>
           </div>
-          <form action="#" method="get" class="form">
-            <input
-              type="text"
-              name="city"
-              class="input-city"
-              placeholder="Enter city name"
-              required
-            />
-            <button type="submit" class="search-btn">Search</button>
-          </form>
         </div>
 
         <div class="weather-data-container">
@@ -46,12 +49,12 @@
           <div class="wind-speed">
             <p>4.63 speed</p>
           </div>
-          <div class="min-temperature">
+          <!-- <div class="min-temperature">
             <p>307.57 min temp</p>
           </div>
           <div class="max-temperature">
             <p>307.57 max temp</p>
-          </div>
+          </div> -->
         </div>
       </main>
     </div>
